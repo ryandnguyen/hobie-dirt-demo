@@ -139,6 +139,12 @@ nav {
     max-width: 600px;
 }
 
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -148,6 +154,7 @@ nav {
     border: none;
     cursor: pointer;
     transition: var(--transition);
+    text-align: center;
 }
 
 .btn-primary {
@@ -163,9 +170,7 @@ nav {
     background: transparent;
     border: 2px solid var(--white);
     color: var(--white);
-    margin-left: 1rem;
 }
-
 .btn-secondary:hover {
     background: var(--white);
     color: var(--secondary-color);
@@ -360,5 +365,14 @@ footer {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
     }
 }
