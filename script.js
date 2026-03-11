@@ -47,16 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showLightbox() {
+        console.log('Opening lightbox with gallery:', currentGallery);
         lightboxImg.src = currentGallery[currentIndex];
         lightbox.style.display = 'flex';
         
-        // Hide/show nav buttons based on gallery size
-        if (currentGallery.length <= 1) {
+        // Ensure nav buttons are visible if there are multiple images
+        if (currentGallery.length > 1) {
+            prevBtn.style.setProperty('display', 'block', 'important');
+            nextBtn.style.setProperty('display', 'block', 'important');
+        } else {
             prevBtn.style.display = 'none';
             nextBtn.style.display = 'none';
-        } else {
-            prevBtn.style.display = 'block';
-            nextBtn.style.display = 'block';
         }
     }
 

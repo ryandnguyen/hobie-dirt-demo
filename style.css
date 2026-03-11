@@ -356,16 +356,24 @@ nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    padding: 0 20px;
+    pointer-events: none;
 }
 
 .lightbox-nav button {
-    background: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.5);
     border: none;
     color: var(--white);
-    padding: 1rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 1.5rem;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
 }
 
 .lightbox-nav button:hover {
