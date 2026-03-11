@@ -20,6 +20,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Lightbox Functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.querySelector('.close-lightbox');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const mainImg = item.querySelector('img');
+            const hiddenImgs = item.querySelectorAll('.hidden-images img');
+            
+            currentGallery = [];
+            if (mainImg) currentGallery.push(mainImg.src);
+            hiddenImgs.forEach(img => currentGallery.push(img.src));
+
+            if (currentGallery.length > 0) {
+                currentIndex = 0;
+                showLightbox();
+            }
+        });
+    });
+
+    function showLightbox() {
+        lightboxImg.src = currentGallery[currentIndex];
+        lightbox.style.display = 'flex';
+        
+        // Hide/show nav buttons based on gallery size
+        if (currentGallery.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'block';
+            nextBtn.style.display = 'block';
+        }
+    }
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        lightboxImg.src = currentGallery[currentIndex];
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        lightboxImg.src = currentGallery[currentIndex];
+    });
+
+    closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
     // Simple Form Submission
     const quoteForm = document.getElementById('quote-form');
     if (quoteForm) {

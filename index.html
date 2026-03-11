@@ -108,24 +108,48 @@
         <section id="projects" class="projects py">
             <div class="container">
                 <h2 class="section-title text-center">Recent Projects</h2>
-                <p class="text-center">Take a look at some of our recent transformations.</p>
+                <p class="text-center">Click a project to view the full gallery.</p>
                 <div class="gallery">
-                    <!-- Placeholder project cards -->
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Project Photo Placeholder</div>
+                    <!-- Site Prep Gallery -->
+                    <div class="gallery-item" data-gallery="site-prep">
+                        <img src="Pictures/Site Prep/IMG_9516.jpg" alt="Site Preparation Project">
                         <div class="gallery-info"><h4>Site Preparation</h4></div>
+                        <div class="hidden-images">
+                            <img src="Pictures/Site Prep/IMG_9518.jpg">
+                        </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Project Photo Placeholder</div>
+                    <!-- Demolition Gallery (Placeholder) -->
+                    <div class="gallery-item" data-gallery="demolition">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-hammer"></i>
+                            <p>Demolition Photos Coming Soon</p>
+                        </div>
                         <div class="gallery-info"><h4>Demolition</h4></div>
+                        <div class="hidden-images"></div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Project Photo Placeholder</div>
+                    <!-- Grading Gallery -->
+                    <div class="gallery-item" data-gallery="grading">
+                        <img src="Pictures/GradingAndDrainage/IMG_7558.jpg" alt="Grading & Drainage Project">
                         <div class="gallery-info"><h4>Grading & Drainage</h4></div>
+                        <div class="hidden-images">
+                            <img src="Pictures/GradingAndDrainage/IMG_7559.jpg">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-nav">
+                    <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
 
         <!-- Contact Section -->
         <section id="contact" class="contact py bg-dark text-white">
