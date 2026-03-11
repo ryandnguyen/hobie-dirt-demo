@@ -236,6 +236,8 @@ nav {
 
 .service-category ul {
     list-style: none;
+    column-count: 2;
+    column-gap: 2rem;
 }
 
 .service-category ul li {
@@ -374,5 +376,9 @@ footer {
 
     .hero-btns .btn {
         width: 100%;
+    }
+
+    .service-category ul {
+        column-count: 1;
     }
 }
